@@ -24,6 +24,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -40,10 +45,10 @@ set backspace=indent,eol,start
 
 " Python tabbing, etc
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
+    \ set tabstop=8 |
     \ set softtabstop=4 | 
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=160 | " 79
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
@@ -87,6 +92,9 @@ Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
 syntax on
 
+" Reload flake8 upon write
+autocmd BufWritePost *.py call Flake8()
+
 " Color schemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
@@ -112,6 +120,9 @@ let Tlist_WinWidth = 50
 let Tlist_Use_Right_Window   = 1
 let g:NERDTreeWinSize = 40 
 
+" Create hotkeys for Nerdtree and Taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <F6> :NERDTreeToggle<CR>
 
 " Super searching with ctrl-P
 "   see http://www.youtube.com/watch?v=9XrHk3xjYsw
