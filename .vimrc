@@ -43,9 +43,12 @@ let g:SimpylFold_docstring_preview=1
 " Fix backspace
 set backspace=indent,eol,start
 
+" Allow highlighted search
+:set hlsearch
+
 " Python tabbing, etc
 au BufNewFile,BufRead *.py
-    \ set tabstop=8 |
+    \ set tabstop=4 |
     \ set softtabstop=4 | 
     \ set shiftwidth=4 |
     \ set textwidth=160 | " 79
@@ -90,6 +93,7 @@ EOF
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
+let g:flake8_quickfix_height=20
 syntax on
 
 " Reload flake8 upon write
@@ -111,6 +115,7 @@ call togglebg#map("<F5>")
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeQuitOnOpen=1
 
 " List functions and classes
 Plugin 'taglist.vim'
