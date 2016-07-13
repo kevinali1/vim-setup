@@ -103,7 +103,7 @@ autocmd BufWritePost *.py call Flake8()
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 if has('gui_running')
-  set background=dark
+  set background=light
     colorscheme solarized
   else
     colorscheme zenburn
@@ -114,8 +114,9 @@ call togglebg#map("<F5>")
 " File browsing
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+au VimEnter *  NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 
 " List functions and classes
 Plugin 'taglist.vim'
@@ -145,6 +146,9 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Set clipboard (mainly for OSX)
 set clipboard=unnamed
+
+" Remove trailing whitespace
+command RemoveWhite %s/\s\+$//
 
 " Set up ipdb breakpoints
 " Toggling rather than two different keys + autosave
@@ -179,3 +183,6 @@ def toggle_breakpoint():
 
 vim.command('map <f9> :py toggle_breakpoint()<cr>')
 EOF
+
+" Set autoread - allow content to be automatically refreshed
+:set autoread
