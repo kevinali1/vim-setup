@@ -27,4 +27,6 @@ $ vim ~/.vimrc
 ## 5 - Install package updates
 $ vim
 
-Type :PluginInstall. This will install all the plugins. It make take a few minutes.
+Type :PluginInstall. 
+
+This will install all the plugins. It make take a few minutes. Some installations may fail the first time. If they do, just repeat this command until everything is installed properly.
