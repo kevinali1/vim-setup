@@ -15,6 +15,16 @@ $ sudo apt-get install vim
 ## 2 - Install vim bundle package manager
 $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-## 3 - Create and edit your .vimrc file
-touch ~/.vimrc
-vim ~/.vimrc
+## 3 - Clone this repo
+$ mkdir Code; cd Code
+$ git clone git@github.com:kevinali1/vim-setup.git
+$ cd vim-setup
+
+## 4 - Create and edit your .vimrc file
+$ cp ~/.vimrc ~/.vimrc.backup
+$ vim ~/.vimrc
+
+## 5 - Install package updates
+$ vim
+
+Type :PluginInstall. This will install all the plugins. It make take a few minutes.
