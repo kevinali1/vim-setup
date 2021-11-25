@@ -8,9 +8,12 @@ Vim is a terminal-based text editor for Unix like systems. It is fast and reliab
 This guide assumes you are familiar with the basics of using vim. For more help you can run vimtutor
 
 ## 1 - Install vim
+```console
 $ sudo apt-get remove vim-tiny
 $ sudo apt-get update
 $ sudo apt-get install vim
+$ sudo apt install vim-gtk3  # allows +clipboard support
+```
 
 ## 2 - Install vim bundle package manager
 $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
